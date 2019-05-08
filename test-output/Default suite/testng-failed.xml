@@ -3,12 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.RestAssured.goodpractise.PostRequestDelete">
+      <class name="com.RestAssured.goodpractise.GetRequestJsonArray">
         <methods>
-          <include name="addedAndDelete"/>
-          <include name="getData"/>
+          <include name="jsonArray"/>
+          <include name="getProperty"/>
         </methods>
-      </class> <!-- com.RestAssured.goodpractise.PostRequestDelete -->
+      </class> <!-- com.RestAssured.goodpractise.GetRequestJsonArray -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

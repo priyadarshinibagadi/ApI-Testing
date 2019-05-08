@@ -10,9 +10,14 @@ import java.nio.file.Paths;
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
+import io.restassured.path.xml.XmlPath;
 import io.restassured.response.Response;
+import com.RestAssured.goodpractise.Resources;
+import com.RestAssured.goodpractise.CommonFunctions;
 
 public class BasciesOfXml {
+	Resources r = new Resources();
+	CommonFunctions cf = new CommonFunctions();
 	@Test
 	public void postRequestXml() throws IOException{
 		String postdata=generateStringFromResource("C:\\Users\\New User\\Documents\\places.xml");
@@ -21,18 +26,20 @@ public class BasciesOfXml {
 		queryParam("key", "qaclick123").
 	    body(postdata).
         when().
-	    post("/maps/api/place/add/xml")
+	    post(r.addXmlResource())
 	   .then()
 	   .assertThat().statusCode(200)
 	   .and().contentType(ContentType.XML)
 	   .and().extract().response();
 		
-		String response =res.asString();
-		System.out.println(response);
+		XmlPath xp = cf.commonMethodsForXml(res);
+		String x=xp.get("response.place_id");
+		System.out.println(x);
 		
 	}
 	public String generateStringFromResource(String path) throws IOException{
-		return new String(Files.readAllBytes(Paths.get(path)));
+		return new String(Files.readAllBytes(Paths.get(path)));//path of .xml file will be converted into string, in string all bytes are read
+		                                                       
 		
 	}
 

@@ -35,7 +35,7 @@ public class PostRequestDelete {
 		queryParam("key",prop.getProperty("Key")).
 	    body(pl.getPostData()).
 	 when().
-	 post(rss.placeResources())
+	 post(rss.addJsonResources())
 	 .then().assertThat()
 	 .statusCode(200).and().contentType(ContentType.JSON).and().
 	 body("status", equalTo("OK"))
@@ -57,7 +57,7 @@ public class PostRequestDelete {
 				
 			"}")
 		.when()
-		.post(rss.deleteTypeResource()).
+		.post(rss.deleteJsonResource()).
 		then().assertThat().statusCode(200).and().contentType(ContentType.JSON).and().
 		body("status", equalTo("OK"));
 		
