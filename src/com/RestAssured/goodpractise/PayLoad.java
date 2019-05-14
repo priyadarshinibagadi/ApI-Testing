@@ -18,5 +18,10 @@ public class PayLoad {
 		return b;
 		
 	}
+	public static String addBookToPayload(String isbn, String aisle){
+		String payload = "{\r\n\t\"name\":\"Learn Appium Automation with Java\",\r\n\t\"isbn\":\""+isbn+"\",\r\n\t\"aisle\":\""+aisle+"\",\r\n\t\"author\":\"John foe\"\r\n}";
+		return payload;
+		
+	}
 
 }

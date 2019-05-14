@@ -3,12 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.RestAssured.goodpractise.GetRequestJsonArray">
+      <class name="com.RestAssured.StaticJson.StaticJson">
         <methods>
-          <include name="jsonArray"/>
-          <include name="getProperty"/>
+          <include name="staticJsonPayload"/>
         </methods>
-      </class> <!-- com.RestAssured.goodpractise.GetRequestJsonArray -->
+      </class> <!-- com.RestAssured.StaticJson.StaticJson -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
